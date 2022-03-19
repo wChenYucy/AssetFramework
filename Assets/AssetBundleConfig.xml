@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AssetBundleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ItemList AssetPath="Assets/GameData/Prefab/LoadingPanel.prefab" AssetName="LoadingPanel.prefab" AssetBundleName="loadingpanel" AssetCrc="3173239145" />
+  <ItemList AssetPath="Assets/GameData/Sprites/LoseWindow/Btn_replay.png" AssetName="Btn_replay.png" AssetBundleName="losewindowui" AssetCrc="3610439928" />
+  <ItemList AssetPath="Assets/GameData/Sprites/LoseWindow/Btn_replay_pressed.png" AssetName="Btn_replay_pressed.png" AssetBundleName="losewindowui" AssetCrc="3105461747" />
+  <ItemList AssetPath="Assets/GameData/Sprites/LoseWindow/Navigator_lose_image.png" AssetName="Navigator_lose_image.png" AssetBundleName="losewindowui" AssetCrc="2110681142" />
+  <ItemList AssetPath="Assets/GameData/Sprites/LoseWindow/Navigator_lose_image_1.png" AssetName="Navigator_lose_image_1.png" AssetBundleName="losewindowui" AssetCrc="3936415079" />
+  <ItemList AssetPath="Assets/GameData/Sprites/LoseWindow/Navigator_lose_image_2.png" AssetName="Navigator_lose_image_2.png" AssetBundleName="losewindowui" AssetCrc="3537223296" />
+  <ItemList AssetPath="Assets/GameData/Sprites/LoseWindow/Navigator_lose_image_3.png" AssetName="Navigator_lose_image_3.png" AssetBundleName="losewindowui" AssetCrc="3305541597" />
+  <ItemList AssetPath="Assets/GameData/Sprites/LoseWindow/Navigator_lose_text.png" AssetName="Navigator_lose_text.png" AssetBundleName="losewindowui" AssetCrc="3346383645" />
+  <ItemList AssetPath="Assets/GameData/Sprites/LoseWindow/Navigator_prompt_pressed_zh.png" AssetName="Navigator_prompt_pressed_zh.png" AssetBundleName="losewindowui" AssetCrc="1282784829" />
+  <ItemList AssetPath="Assets/GameData/Sprites/LoseWindow/Navigator_prompt_zh.png" AssetName="Navigator_prompt_zh.png" AssetBundleName="losewindowui" AssetCrc="3841217240" />
+  <ItemList AssetPath="Assets/GameData/Prefab/MenuPanel.prefab" AssetName="MenuPanel.prefab" AssetBundleName="menupanel" AssetCrc="2797945870" />
+  <ItemList AssetPath="Assets/GameData/Shaders/benghuai.shader" AssetName="benghuai.shader" AssetBundleName="shader" AssetCrc="2579437311" />
+  <ItemList AssetPath="Assets/GameData/Shaders/Skybox.shader" AssetName="Skybox.shader" AssetBundleName="shader" AssetCrc="3516929226" />
+  <ItemList AssetPath="Assets/GameData/Shaders/Water.shader" AssetName="Water.shader" AssetBundleName="shader" AssetCrc="3227145628" />
+  <ItemList AssetPath="Assets/GameData/Shaders/Xray.shader" AssetName="Xray.shader" AssetBundleName="shader" AssetCrc="4031005319" />
+  <ItemList AssetPath="Assets/GameData/Sounds/menusound.mp3" AssetName="menusound.mp3" AssetBundleName="sound" AssetCrc="434825717" />
+  <ItemList AssetPath="Assets/GameData/Sounds/senlin.mp3" AssetName="senlin.mp3" AssetBundleName="sound" AssetCrc="4169778779" />
+</AssetBundleConfig>

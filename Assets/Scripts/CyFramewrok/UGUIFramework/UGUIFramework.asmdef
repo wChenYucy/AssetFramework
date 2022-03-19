@@ -1,0 +1,17 @@
+{
+    "name": "UGUIFramework",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c627289cd9367424fa9f75a5d8f07438",
+        "GUID:084af8d9eb5cd4a4b9d6728b38718bb8"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

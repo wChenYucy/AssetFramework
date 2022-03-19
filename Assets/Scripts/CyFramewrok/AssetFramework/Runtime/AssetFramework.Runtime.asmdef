@@ -1,0 +1,17 @@
+{
+    "name": "AssetFramework.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c627289cd9367424fa9f75a5d8f07438",
+        "GUID:35bda1924814046e2af90b0afd768f59"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

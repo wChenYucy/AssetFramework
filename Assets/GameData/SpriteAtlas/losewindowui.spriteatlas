@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: losewindowui
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: deba684c671ac4d83b6f2bc1115e278a, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 9f9cafd18c0bc4a23b097a5e3c14107e, type: 3}
+  - {fileID: 21300000, guid: 6452c2736d4b9482897f3e3daaa94ed1, type: 3}
+  - {fileID: 21300000, guid: c1d122846a75040189f0403f266d3b18, type: 3}
+  - {fileID: 21300000, guid: 4d145f848622d43a18ef21c09a3fae79, type: 3}
+  - {fileID: 21300000, guid: 904b1c554b5b3494eb2be1ec1085df51, type: 3}
+  - {fileID: 21300000, guid: fdde21d55a9be419da56d2a23fe6be4c, type: 3}
+  - {fileID: 21300000, guid: 725955b86c5244affbab591158bd9f7e, type: 3}
+  - {fileID: 21300000, guid: 9771ea493cfca4af1a14f86dc47a6699, type: 3}
+  - {fileID: 21300000, guid: 68e6a4ed01f444431b43f6431ba62df2, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Navigator_lose_image_2
+  - Navigator_prompt_pressed_zh
+  - Navigator_lose_image_3
+  - Btn_replay_pressed
+  - Btn_replay
+  - Navigator_lose_text
+  - Navigator_lose_image
+  - Navigator_prompt_zh
+  - Navigator_lose_image_1
+  m_RenderDataMap: {}
+  m_Tag: losewindowui
+  m_IsVariant: 0
