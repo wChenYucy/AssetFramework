@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <AssetBundleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ItemList AssetPath="Assets/GameData/Prefab/Attack.prefab" AssetName="Attack.prefab" AssetBundleName="attack" AssetCrc="1071284827">
+    <DependAssetBundle>shader</DependAssetBundle>
+  </ItemList>
   <ItemList AssetPath="Assets/GameData/Prefab/LoadingPanel.prefab" AssetName="LoadingPanel.prefab" AssetBundleName="loadingpanel" AssetCrc="3173239145" />
   <ItemList AssetPath="Assets/GameData/Sprites/LoseWindow/Btn_replay.png" AssetName="Btn_replay.png" AssetBundleName="losewindowui" AssetCrc="3610439928" />
   <ItemList AssetPath="Assets/GameData/Sprites/LoseWindow/Btn_replay_pressed.png" AssetName="Btn_replay_pressed.png" AssetBundleName="losewindowui" AssetCrc="3105461747" />

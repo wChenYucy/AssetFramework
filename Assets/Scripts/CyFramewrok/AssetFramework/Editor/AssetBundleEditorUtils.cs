@@ -8,12 +8,14 @@ using UnityEngine;
 
 public class AssetBundleEditorUtils
 {
+    //AssetBundle构建目录
+    public static string AssetBundleBuildPath =
+        Application.dataPath + "/../AssetBundle/" + EditorUserBuildSettings.activeBuildTarget;
     //xml配置文件输出路径
     private static readonly string XMLOUTPUTPATH = Application.dataPath + "/AssetBundleConfig.xml";
     //二进制配置文件输出路径
     private static readonly string BINARYOUTPUTPATH = Application.dataPath + "/AssetBundleConfig.bytes";
-    //AssetBundle构建目录
-    private static string BuildTargetPath = Application.streamingAssetsPath;
+    
     // 文件夹资源字典
     private static Dictionary<string, string> dirPathDic = new();
     // 预制体资源字典
@@ -41,18 +43,21 @@ public class AssetBundleEditorUtils
         //设置AssetBundle名称名称
         SetAssetBundleNameToFiles();
 
+        if (!Directory.Exists(AssetBundleBuildPath))
+            Directory.CreateDirectory(AssetBundleBuildPath);
+        
         //生成配置表
         CreateConfig();
 
         //构建AB包
-        BuildPipeline.BuildAssetBundles(BuildTargetPath, BuildAssetBundleOptions.ChunkBasedCompression,
+        BuildPipeline.BuildAssetBundles(AssetBundleBuildPath, BuildAssetBundleOptions.ChunkBasedCompression,
             EditorUserBuildSettings.activeBuildTarget);
 
         //清除AssetBundle名称
         ClearAssetBundleName();
-
+        
         SetAssetBundleName("assetbundleconfig", "Assets/AssetBundleConfig.bytes");
-        BuildPipeline.BuildAssetBundles(BuildTargetPath, BuildAssetBundleOptions.ChunkBasedCompression,
+        BuildPipeline.BuildAssetBundles(AssetBundleBuildPath, BuildAssetBundleOptions.ChunkBasedCompression,
             EditorUserBuildSettings.activeBuildTarget);
         ClearAssetBundleName();
         if (File.Exists(BINARYOUTPUTPATH))
@@ -70,7 +75,7 @@ public class AssetBundleEditorUtils
     /// <summary>
     /// 清空所有的集合中原始数据
     /// </summary>
-    public static void ClearAllCollection()
+    private static void ClearAllCollection()
     {
         dirPathDic.Clear();
         bundledAssetPaths.Clear();
@@ -83,7 +88,7 @@ public class AssetBundleEditorUtils
     /// 根据编辑器配置文件构建两个资源字典
     /// </summary>
     /// <exception cref="Exception">AssetBundle名称重复异常与资源名称重复异常</exception>
-    public static void LoadFilesFromPath()
+    private static void LoadFilesFromPath()
     {
         string configPath = AssetDatabase.GUIDToAssetPath(AssetDatabase.FindAssets("t:AssetBundleEditorConfig")[0]);
         AssetBundleEditorConfig assetBundleEditorConfig = AssetDatabase.LoadAssetAtPath<AssetBundleEditorConfig>(configPath);
@@ -154,7 +159,7 @@ public class AssetBundleEditorUtils
     /// <summary>
     /// 为所有待打包的资源设置AssetBundle名称
     /// </summary>
-    public static void SetAssetBundleNameToFiles()
+    private static void SetAssetBundleNameToFiles()
     {
         foreach (var dirName in dirPathDic.Keys)
         {
@@ -250,11 +255,12 @@ public class AssetBundleEditorUtils
     private static void DeleteOldAssetBundle()
     {
         string[] allBundlesName = AssetDatabase.GetAllAssetBundleNames();
-        DirectoryInfo directoryInfo=new DirectoryInfo(BuildTargetPath);
+        DirectoryInfo directoryInfo=new DirectoryInfo(AssetBundleBuildPath);
         FileInfo[] files = directoryInfo.GetFiles("*", SearchOption.AllDirectories);
         for (int i = 0; i < files.Length; i++)
         {
-            if (IsNameInList(files[i].Name, allBundlesName) || files[i].Name.EndsWith(".meta") || files[i].Name.EndsWith(".manifest"))
+            if (IsNameInList(files[i].Name, allBundlesName) || files[i].Name.EndsWith(".meta") ||
+                files[i].Name.EndsWith(".manifest") ) 
             {
                 continue;
             }
@@ -265,6 +271,12 @@ public class AssetBundleEditorUtils
                 {
                     File.Delete(files[i].FullName);
                     File.Delete(files[i].FullName + ".meta");
+                }
+
+                if (File.Exists(files[i].FullName + ".manifest"))
+                {
+                    File.Delete(files[i].FullName+ ".manifest");
+                    File.Delete(files[i].FullName + ".manifest.meta");
                 }
             }
         }
@@ -352,7 +364,7 @@ public class AssetBundleEditorUtils
     /// <summary>
     /// 清除所有资源的AssetBundle名称
     /// </summary>
-    public static void ClearAssetBundleName()
+    private static void ClearAssetBundleName()
     {
         string[] assetBundleNames = AssetDatabase.GetAllAssetBundleNames();
         for (int j = 0; j < assetBundleNames.Length; j++)
