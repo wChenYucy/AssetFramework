@@ -3,6 +3,10 @@
   <ItemList AssetPath="Assets/GameData/Prefab/Attack.prefab" AssetName="Attack.prefab" AssetBundleName="attack" AssetCrc="1071284827">
     <DependAssetBundle>shader</DependAssetBundle>
   </ItemList>
+  <ItemList AssetPath="Assets/GameData/Prefab/Image1.prefab" AssetName="Image1.prefab" AssetBundleName="image1" AssetCrc="37400694" />
+  <ItemList AssetPath="Assets/GameData/Prefab/Image2.prefab" AssetName="Image2.prefab" AssetBundleName="image2" AssetCrc="3345073644">
+    <DependAssetBundle>image1</DependAssetBundle>
+  </ItemList>
   <ItemList AssetPath="Assets/GameData/Prefab/LoadingPanel.prefab" AssetName="LoadingPanel.prefab" AssetBundleName="loadingpanel" AssetCrc="3173239145" />
   <ItemList AssetPath="Assets/GameData/Sprites/LoseWindow/Btn_replay.png" AssetName="Btn_replay.png" AssetBundleName="losewindowui" AssetCrc="3610439928" />
   <ItemList AssetPath="Assets/GameData/Sprites/LoseWindow/Btn_replay_pressed.png" AssetName="Btn_replay_pressed.png" AssetBundleName="losewindowui" AssetCrc="3105461747" />

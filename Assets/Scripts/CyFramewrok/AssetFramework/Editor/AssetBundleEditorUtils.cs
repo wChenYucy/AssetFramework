@@ -220,7 +220,7 @@ public class AssetBundleEditorUtils
             for (int j = 0; j < allPathInBundleName.Length; j++)
             {
                 //过滤脚本文件以及不会动态加载的文件
-                if(allPathInBundleName[j].EndsWith(".cs")||!ValidPath(allPathInBundleName[j]))
+                if(allPathInBundleName[j].EndsWith(".cs"))
                     continue;
                 resPathDictionary.Add(allPathInBundleName[j],bundleNames[i]);
             }
@@ -309,6 +309,8 @@ public class AssetBundleEditorUtils
         config.ItemList=new List<ItemConfig>();
         foreach (string path in resPathDictionary.Keys)
         {
+            if(!ValidPath(path))
+                continue;
             ItemConfig itemConfig=new ItemConfig();
             itemConfig.AssetPath = path;
             itemConfig.AssetBundleName = resPathDictionary[path];
@@ -321,9 +323,8 @@ public class AssetBundleEditorUtils
                 string tempPath = dependPath[i];
                 if(tempPath==path || tempPath.EndsWith(".cs"))
                     continue;
-
-                string assetBundleName;
-                if (resPathDictionary.TryGetValue(tempPath, out assetBundleName))
+                
+                if (resPathDictionary.TryGetValue(tempPath, out string assetBundleName))
                 {
                     if(assetBundleName == resPathDictionary[path])
                         continue;
