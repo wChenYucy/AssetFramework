@@ -39,9 +39,9 @@ public class AssetManager : Singleton<AssetManager>
     /// <param name="assetName">资源名称</param>
     /// <param name="assetBundleName">资源所在AssetBundle名称</param>
     /// <typeparam name="T">资源类型</typeparam>
-    public void PreloadAsset<T>(string assetName, string assetBundleName) where T : UnityEngine.Object
+    public void PreloadAsset<T>(string path) where T : UnityEngine.Object
     {
-        UnityEngine.Object obj = LoadAsset<T>(assetName, assetBundleName);
+        UnityEngine.Object obj = LoadAsset<T>(path);
         ReleaseAsset(obj, false);
     }
     
@@ -52,18 +52,15 @@ public class AssetManager : Singleton<AssetManager>
     /// <param name="assetBundleName">AssetBundle名称</param>
     /// <typeparam name="T">加载资源的类型</typeparam>
     /// <returns>加载后的资源</returns>
-    public T LoadAsset<T>(string assetName, string assetBundleName) where T : UnityEngine.Object
+    public T LoadAsset<T>(string path) where T : UnityEngine.Object
     {
         //空值判断
-        if (string.IsNullOrEmpty(assetName) || string.IsNullOrEmpty(assetBundleName))
+        if (string.IsNullOrEmpty(path))
         {
             return null;
         }
-        
-        //计算Crc
-        uint crc = Crc32.GetCRC32(assetName + assetBundleName);
 
-        return AssetItemManager.Instance.LoadAsset<T>(crc);
+        return AssetItemManager.Instance.LoadAsset<T>(path);
     }
 
     #endregion
@@ -78,17 +75,16 @@ public class AssetManager : Singleton<AssetManager>
     /// <param name="onLoadFinishCallBack">资源异步加载完成回调函数</param>
     /// <param name="priority">资源加载优先级</param>
     /// <param name="param1">资源加载自定义参数</param>
-    public long AsyncLoadAsset<T>(string assetName, string assetBundleName,
-        AsyncLoadFinishCallBack onLoadFinishCallBack,
-        AsyncLoadPriority priority, object param1 = null) where T : UnityEngine.Object
+    public long AsyncLoadAsset<T>(string path, AsyncLoadFinishCallBack onLoadFinishCallBack, AsyncLoadPriority priority,
+        object param1 = null) where T : UnityEngine.Object
     {
         //空值判断
-        if (string.IsNullOrEmpty(assetName) || string.IsNullOrEmpty(assetBundleName))
+        if (string.IsNullOrEmpty(path))
         {
             return -1;
         }
         
-        uint crc = Crc32.GetCRC32(assetName + assetBundleName);
+        uint crc = Crc32.GetCRC32(path);
         AssetItem item = AssetItemManager.Instance.FindOrGetAssetItem(crc);
         if (item.AssetObject != null)
         {
@@ -96,7 +92,7 @@ public class AssetManager : Singleton<AssetManager>
             onLoadFinishCallBack?.Invoke(item.AssetObject, param1);
             return -1;
         }
-        return AssetItemManager.Instance.AsyncLoadAsset<T>(assetName,assetBundleName,onLoadFinishCallBack,priority,param1);
+        return AssetItemManager.Instance.AsyncLoadAsset<T>(path,onLoadFinishCallBack,priority,param1);
     }
 
     /// <summary>
@@ -155,12 +151,12 @@ public class AssetManager : Singleton<AssetManager>
     /// <param name="parent">GameObject父物体</param>
     /// <param name="showGameObjectAction">GameObject显示时的回调方法</param>
     /// <param name="clearSelf">是否清除自身</param>
-    public void PreloadGameObject(string assetName, string assetBundleName, int count = 1, Transform parent = null)
+    public void PreloadGameObject(string path, int count = 1, Transform parent = null)
     {
         List<GameObject> tempGameObjectList = new List<GameObject>();
         for (int i = 0; i < count; i++)
         {
-            GameObject go = LoadGameObject(assetName, assetBundleName, parent, false);
+            GameObject go = LoadGameObject(path, parent, false);
             tempGameObjectList.Add(go);
         }
         
@@ -183,16 +179,16 @@ public class AssetManager : Singleton<AssetManager>
     /// <param name="showGameObjectAction">显示GameObject的回调函数</param>
     /// <param name="clearSelf">是否在跳转场景时清空自己</param>
     /// <returns>GameObject</returns>
-    public GameObject LoadGameObject(string assetName, string assetBundleName, Transform parent = null, bool clearSelf = true)
+    public GameObject LoadGameObject(string path, Transform parent = null, bool clearSelf = true)
     {
         //空值判断
-        if (string.IsNullOrEmpty(assetName) || string.IsNullOrEmpty(assetBundleName))
+        if (string.IsNullOrEmpty(path))
         {
             return null;
         }
         
         //计算Crc
-        uint crc = Crc32.GetCRC32(assetName + assetBundleName);
+        uint crc = Crc32.GetCRC32(path);
         GameObjectItem gameObjectItem = gameObjectItemPool.Spawn(true);
         gameObjectItem.AssetItem = AssetItemManager.Instance.FindOrGetAssetItem(crc);
         gameObjectItem.ClearSelf = clearSelf;
@@ -201,7 +197,7 @@ public class AssetManager : Singleton<AssetManager>
         GameObject gameObject = GetGameObjectFromPools(crc);
         if (gameObject == null)
         {
-            GameObject prefab = AssetItemManager.Instance.LoadAsset<GameObject>(gameObjectItem.AssetItem);
+            GameObject prefab = AssetItemManager.Instance.LoadAsset<GameObject>(path);
             if (prefab != null)
             {
                 gameObject = GameObject.Instantiate(prefab);
@@ -261,15 +257,15 @@ public class AssetManager : Singleton<AssetManager>
     /// <param name="showGameObjectAction">GameObject显示回调</param>
     /// <param name="clearSelf">是否清除自身</param>
     /// <param name="param1">回调函数参数</param>
-    public long AsyncLoadGameObject(string assetName, string assetBundleName, AsyncLoadFinishCallBack onLoadFinishCallBack,
+    public long AsyncLoadGameObject(string path, AsyncLoadFinishCallBack onLoadFinishCallBack,
         AsyncLoadPriority priority, Transform parent = null, bool clearSelf = true, object param1 = null)
     {
         //空值判断
-        if (string.IsNullOrEmpty(assetName) || string.IsNullOrEmpty(assetBundleName))
+        if (string.IsNullOrEmpty(path))
         {
             return -1;
         }
-        uint crc = Crc32.GetCRC32(assetName + assetBundleName);
+        uint crc = Crc32.GetCRC32(path);
         GameObject gameObject = GetGameObjectFromPools(crc);
         if (gameObject != null)
         {
@@ -287,8 +283,8 @@ public class AssetManager : Singleton<AssetManager>
             return -1;
         }
 
-        return AssetItemManager.Instance.AsyncLoadAsset<GameObject>(assetName, assetBundleName,
-            onLoadFinishCallBack, priority, param1, true, parent, clearSelf);
+        return AssetItemManager.Instance.AsyncLoadAsset<GameObject>(path, onLoadFinishCallBack, priority, param1, true,
+            parent, clearSelf);
     }
 
     /// <summary>
@@ -377,8 +373,9 @@ public class AssetManager : Singleton<AssetManager>
 
     private List<GameObject> clearGameObjectList;
     
-    public void ClearHalfOfGameObjectPool(uint crc)
+    public void ClearHalfOfGameObjectPool(string path)
     {
+        uint crc = Crc32.GetCRC32(path);
         if (!gameObjectPool.TryGetValue(crc, out clearGameObjectList))
         {
             Debug.LogError("不存在存储"+crc+"GameObject的对象池！清除失败");
@@ -398,8 +395,9 @@ public class AssetManager : Singleton<AssetManager>
 
         clearGameObjectList = null;
     }
-    public void RemoveGameObjectPool(uint crc , bool unloadAsset = false)
+    public void RemoveGameObjectPool(string path, bool unloadAsset = false)
     {
+        uint crc = Crc32.GetCRC32(path);
         if (!gameObjectPool.TryGetValue(crc, out clearGameObjectList))
         {
             Debug.LogError("不存在存储"+crc+"GameObject的对象池！清除失败");

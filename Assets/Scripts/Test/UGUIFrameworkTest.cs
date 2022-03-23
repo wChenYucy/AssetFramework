@@ -24,7 +24,7 @@ public class UGUIFrameworkTest : MonoBehaviour
         UIManager.Instance.Register<LoadingUi>(ConStr.LOADINGPANEL);
         GameMapManager.Instance.Init(this);
         //AssetManager.Instance.PreloadAsset<AudioClip>("senlin.mp3","sound");
-        AssetManager.Instance.PreloadGameObject("Attack.prefab", "attack", 10, transform);
+        AssetManager.Instance.PreloadGameObject("Assets/GameData/Prefab/Attack.prefab", 10, transform);
         //GameObject go = AssetManager.Instance.LoadGameObject("Attack.prefab", "attack", transform);
         // AssetManager.Instance.ReleaseAsset(go, false);
         

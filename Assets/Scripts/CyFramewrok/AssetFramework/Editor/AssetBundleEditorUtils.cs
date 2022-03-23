@@ -315,7 +315,7 @@ public class AssetBundleEditorUtils
             itemConfig.AssetPath = path;
             itemConfig.AssetBundleName = resPathDictionary[path];
             itemConfig.AssetName = path.Remove(0, path.LastIndexOf("/") + 1);
-            itemConfig.AssetCrc = Crc32.GetCRC32(itemConfig.AssetName+itemConfig.AssetBundleName);
+            itemConfig.AssetCrc = Crc32.GetCRC32(itemConfig.AssetPath);
             itemConfig.DependAssetBundle=new List<string>();
             string[] dependPath = AssetDatabase.GetDependencies(path);
             for (int i = 0; i < dependPath.Length; i++)
@@ -349,10 +349,10 @@ public class AssetBundleEditorUtils
         }
         
         //写入二进制
-        // foreach (ItemConfig abBase in config.ItemList )
-        // {
-        //     abBase.AssetPath = "";
-        // }
+        foreach (ItemConfig abBase in config.ItemList)
+        {
+            abBase.AssetPath = "";
+        }
         if(File.Exists(BINARYOUTPUTPATH))
             File.Delete(BINARYOUTPUTPATH);
         using (FileStream fileStream=new FileStream(BINARYOUTPUTPATH,FileMode.Create,FileAccess.ReadWrite,FileShare.ReadWrite))

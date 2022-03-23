@@ -28,13 +28,24 @@ public class AssetItemManager : Singleton<AssetItemManager>
     /// <param name="mono">异步加载协程执行类</param>
     internal void InitAssetItemManager(AssetManagerConfig managerConfig)
     {
+        maxNoReferenceCount = managerConfig.MaxAssetCacheCount;
+        
+        for (int i = 0; i < (int)AsyncLoadPriority.RES_NUM; i++)
+        {
+            asyncLoadList[i] = new List<AsyncAssetLoadBlock>();
+        }
+        startCoroutineMono = managerConfig.startCoroutineMono;
+        startCoroutineMono.StartCoroutine(AsyncLoadCoroutine());
+#if UNITY_EDITOR
+        if(!LoadFromAssetBundle)
+            return;
+#endif
         AssetBundleConfig config = AssetBundleManager.Instance.LoadAssetBundleConfig(managerConfig.ConfigPath);
         for (int i = 0; i < config.ItemList.Count; i++)
         {
             ItemConfig item = config.ItemList[i];
             AssetItem assetItem = new AssetItem();
             assetItem.Crc = item.AssetCrc;
-            assetItem.AssetPath = item.AssetPath;
             assetItem.AssetName = item.AssetName;
             assetItem.AssetBundleName = item.AssetBundleName;
             assetItem.DependentAssetBundle = item.DependAssetBundle;
@@ -47,15 +58,6 @@ public class AssetItemManager : Singleton<AssetItemManager>
                 assetItemsDic.Add(assetItem.Crc,assetItem);
             }
         }
-
-        maxNoReferenceCount = managerConfig.MaxAssetCacheCount;
-        
-        for (int i = 0; i < (int)AsyncLoadPriority.RES_NUM; i++)
-        {
-            asyncLoadList[i] = new List<AsyncAssetLoadBlock>();
-        }
-        startCoroutineMono = managerConfig.startCoroutineMono;
-        startCoroutineMono.StartCoroutine(AsyncLoadCoroutine());
     }
     
     /// <summary>
@@ -71,7 +73,6 @@ public class AssetItemManager : Singleton<AssetItemManager>
     /// <returns>AssetItem</returns>
     internal AssetItem FindOrGetAssetItem(uint crc)
     {
-        //todo 考虑是否可以优化
         //尝试从已经被使用的ResourceItem字典中获得
         if (usedAssetItemDic.TryGetValue(crc, out AssetItem item) || item != null)
         {
@@ -81,6 +82,15 @@ public class AssetItemManager : Singleton<AssetItemManager>
         //从总的ResourceItem字典中获得
         if (!assetItemsDic.TryGetValue(crc, out item) || item == null)
         {
+#if UNITY_EDITOR
+            if (!LoadFromAssetBundle)
+            {
+                item = new AssetItem();
+                item.Crc = crc;
+                assetItemsDic.Add(crc, item);
+                return item;
+            }
+#endif
             Debug.LogError($"LoadResourceItem Error:未找到crc值为{crc}的资源信息");
             return null;
         }
@@ -94,56 +104,40 @@ public class AssetItemManager : Singleton<AssetItemManager>
         }
         
         // 加载ResourceItem依赖的AssetBundle
-        if (item.AssetBundle == null)
+        if (item.AssetBundle == null && !string.IsNullOrEmpty(item.AssetBundleName))
         {
             AssetBundleManager.Instance.LoadAssetBundle(item);
-            
         }
         return item;
     }
-    
+
     /// <summary>
     /// 根据Crc加载并填充AssetItem
     /// </summary>
     /// <param name="crc">资源的Crc</param>
     /// <typeparam name="T">资源的类型</typeparam>
     /// <returns>加载后的资源</returns>
-    internal T LoadAsset<T>(uint crc) where T : UnityEngine.Object
+    internal T LoadAsset<T>(string path) where T : UnityEngine.Object
     {
-        AssetItem assetItem = FindOrGetAssetItem(crc);
-        if(assetItem != null)
-            return LoadAsset<T>(assetItem);
-        return null;
-    }
-
-    /// <summary>
-    /// 加载并填充AssetItem
-    /// </summary>
-    /// <param name="item">AssetItem</param>
-    /// <typeparam name="T">资源类型</typeparam>
-    /// <returns>加载后的资源/returns>
-    internal T LoadAsset<T>(AssetItem item) where T : UnityEngine.Object
-    {
+        uint crc = Crc32.GetCRC32(path);
+        AssetItem item = FindOrGetAssetItem(crc);
         UnityEngine.Object obj = null;
-        
 #if UNITY_EDITOR
         if (!LoadFromAssetBundle)
         {
-            if (item == null)
+            if (item != null && item.AssetObject != null)
             {
-                //todo 从编辑器加载AssetItem
+                obj = item.AssetObject as T;
             }
             else
             {
-                if (item.AssetObject != null)
+                if (item == null)
                 {
-                    obj = item.AssetObject as T;
+                    item = new AssetItem();
+                    item.Crc = crc;
                 }
-                else
-                {
-                    obj = AssetDatabase.LoadAssetAtPath<T>(item.AssetPath);
-                    item.AssetObject = obj;
-                }
+                obj = AssetDatabase.LoadAssetAtPath<T>(path);
+                item.AssetObject = obj;
             }
         }
 #endif
@@ -166,6 +160,7 @@ public class AssetItemManager : Singleton<AssetItemManager>
         AddUsedAssetItem(item);
         
         return obj as T;
+        
     }
 
     /// <summary>
@@ -231,18 +226,21 @@ public class AssetItemManager : Singleton<AssetItemManager>
     /// <param name="clearSelf">是否清除GameObject</param>
     /// <typeparam name="T">asset类型</typeparam>
     /// <returns>异步加载GUID</returns>
-    internal long AsyncLoadAsset<T>(string assetName, string assetBundleName,
-        AsyncLoadFinishCallBack onLoadFinishCallBack, AsyncLoadPriority priority, object param1,
-        bool isGameObject = false, Transform parent = null,
+    internal long AsyncLoadAsset<T>(string path, AsyncLoadFinishCallBack onLoadFinishCallBack,
+        AsyncLoadPriority priority, object param1, bool isGameObject = false, Transform parent = null,
         bool clearSelf = true)
     {
-        uint crc = Crc32.GetCRC32(assetName + assetBundleName);
+        uint crc = Crc32.GetCRC32(path);
         if (!asyncLoadDic.TryGetValue(crc, out AsyncAssetLoadBlock block) || block == null)
         {
             block = asyncAssetLoadBlockPool.Spawn(true);
             block.Crc = crc;
             block.AssetType = typeof(T);
             block.Priority = priority;
+            block.IsGameObject = isGameObject;
+#if UNITY_EDITOR
+            block.Path = path; 
+#endif
             asyncLoadDic.Add(crc,block);
             asyncLoadList[(int)priority].Add(block);
         }
@@ -259,6 +257,7 @@ public class AssetItemManager : Singleton<AssetItemManager>
             AsyncGameObjectCallBack asyncGameObjectCallBack = asyncGameObjectCallBackPool.Spawn(true);
             asyncGameObjectCallBack.Parent = parent;
             asyncGameObjectCallBack.ClearSelf = clearSelf;
+           
             block.AsyncCallBackList.Add(asyncGameObjectCallBack);
             asyncAssetCallBack = asyncGameObjectCallBack;
         }
@@ -315,25 +314,24 @@ public class AssetItemManager : Singleton<AssetItemManager>
 
             Type assetType = block.AssetType;
             UnityEngine.Object obj = null;
-            AssetItem item = AssetItemManager.Instance.FindOrGetAssetItem(block.Crc);;
+            AssetItem item = FindOrGetAssetItem(block.Crc);;
 #if UNITY_EDITOR
             if (!LoadFromAssetBundle)
             {
-                if (item == null)
+                if (item != null && item.AssetObject != null)
                 {
-                    //todo 从编辑器加载AssetItem
+                    obj = item.AssetObject;
                 }
                 else
                 {
-                    if (item.AssetObject != null)
+                    if (item == null)
                     {
-                        obj = item.AssetObject;
+                        item = new AssetItem();
+                        item.Crc = block.Crc;
                     }
-                    else
-                    {
-                        obj = AssetDatabase.LoadAssetAtPath(item.AssetPath,assetType);
-                        item.AssetObject = obj;
-                    }
+
+                    obj = AssetDatabase.LoadAssetAtPath(block.Path, block.AssetType);
+                    item.AssetObject = obj;
                 }
                 yield return new WaitForSeconds(0.5f);
             }

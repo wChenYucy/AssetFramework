@@ -77,7 +77,7 @@ public class AssetFrameworkTest : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             long time = DateTime.Now.Ticks;
-            sprite = AssetManager.Instance.LoadAsset<Sprite>("Navigator_lose_image.png", "losewindowui");
+            sprite = AssetManager.Instance.LoadAsset<Sprite>("Assets/GameData/Sprites/LoseWindow/Navigator_lose_image.png");
             Image.sprite = sprite;
             if (count < 0)
                 count = 0;
@@ -85,7 +85,7 @@ public class AssetFrameworkTest : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            long guid = AssetManager.Instance.AsyncLoadAsset<Sprite>("Navigator_lose_image.png", "losewindowui",LoadSprite,AsyncLoadPriority.RES_HIGHT);
+            long guid = AssetManager.Instance.AsyncLoadAsset<Sprite>("Assets/GameData/Sprites/LoseWindow/Navigator_lose_image.png",LoadSprite,AsyncLoadPriority.RES_HIGHT);
             //AssetManager.Instance.CancelAsyncLoad(guid);
             //ResourceManager.Instance.AsyncLoadResource("Navigator_lose_image.png", "losewindowui",LoadSprite,AsyncLoadPriority.RES_HIGHT);
 
@@ -115,7 +115,7 @@ public class AssetFrameworkTest : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            sound = AssetManager.Instance.LoadAsset<AudioClip>("senlin.mp3", "sound");
+            sound = AssetManager.Instance.LoadAsset<AudioClip>("Assets/GameData/Sounds/senlin.mp3");
             AudioSourceItem.clip = sound;
             AudioSourceItem.Play();
             if (count < 0)
@@ -124,7 +124,7 @@ public class AssetFrameworkTest : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            AssetManager.Instance.AsyncLoadAsset<AudioClip>("senlin.mp3", "sound",LoadSound,AsyncLoadPriority.RES_HIGHT);
+            AssetManager.Instance.AsyncLoadAsset<AudioClip>("Assets/GameData/Sounds/senlin.mp3",LoadSound,AsyncLoadPriority.RES_HIGHT);
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -153,14 +153,14 @@ public class AssetFrameworkTest : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            gameObject = AssetManager.Instance.LoadGameObject("Attack.prefab", "attack");
+            gameObject = AssetManager.Instance.LoadGameObject("Assets/GameData/Prefab/Attack.prefab");
             if (count < 0)
                 count = 0;
             count++;
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            AssetManager.Instance.AsyncLoadGameObject("Attack.prefab", "attack",LoadGameObject1,AsyncLoadPriority.RES_HIGHT);
+            AssetManager.Instance.AsyncLoadGameObject("Assets/GameData/Prefab/Attack.prefab",LoadGameObject1,AsyncLoadPriority.RES_HIGHT);
             if (count < 0)
                 count = 0;
             count++;
@@ -190,23 +190,20 @@ public class AssetFrameworkTest : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.G))
         {
-            uint crc = Crc32.GetCRC32("Attack.prefab" + "attack");
-            AssetManager.Instance.ClearHalfOfGameObjectPool(crc);
+            AssetManager.Instance.ClearHalfOfGameObjectPool("Assets/GameData/Prefab/Attack.prefab");
         }
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            uint crc = Crc32.GetCRC32("Attack.prefab" + "attack");
-            AssetManager.Instance.RemoveGameObjectPool(crc);
+            AssetManager.Instance.RemoveGameObjectPool("Assets/GameData/Prefab/Attack.prefab");
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
-            uint crc = Crc32.GetCRC32("Attack.prefab" + "attack");
-            AssetManager.Instance.RemoveGameObjectPool(crc, true);
+            AssetManager.Instance.RemoveGameObjectPool("Assets/GameData/Prefab/Attack.prefab", true);
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
-            AssetManager.Instance.PreloadGameObject("Attack.prefab", "attack",10);
+            AssetManager.Instance.PreloadGameObject("Assets/GameData/Prefab/Attack.prefab",10);
         }
     }
 }

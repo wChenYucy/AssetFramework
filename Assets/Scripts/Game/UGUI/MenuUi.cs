@@ -14,15 +14,12 @@ public class MenuUi : Window
         AddButtonClickListener(m_MainPanel.m_StartButton, OnClickStart);
         AddButtonClickListener(m_MainPanel.m_LoadButton, OnClickLoad);
         AddButtonClickListener(m_MainPanel.m_ExitButton, OnClickExit);
-        AssetManager.Instance.AsyncLoadAsset<Sprite>("Navigator_lose_image.png", "losewindowui", LoadSprite1,
-            AsyncLoadPriority.RES_HIGHT);
-        AssetManager.Instance.AsyncLoadAsset<Sprite>("Btn_replay.png", "losewindowui", LoadSprite2,
-            AsyncLoadPriority.RES_HIGHT);
-        AssetManager.Instance.AsyncLoadAsset<Sprite>("Navigator_lose_image_1.png", "losewindowui", LoadSprite3,
-            AsyncLoadPriority.RES_HIGHT);
-        // m_MainPanel.m_audioSource.clip = AssetManager.Instance.LoadAsset<AudioClip>("senlin.mp3", "sound");
+        AssetManager.Instance.AsyncLoadAsset<Sprite>("Assets/GameData/Sprites/LoseWindow/Navigator_lose_image.png", LoadSprite1, AsyncLoadPriority.RES_HIGHT);
+        AssetManager.Instance.AsyncLoadAsset<Sprite>("Assets/GameData/Sprites/LoseWindow/Btn_replay.png", LoadSprite2, AsyncLoadPriority.RES_HIGHT);
+        AssetManager.Instance.AsyncLoadAsset<Sprite>("Assets/GameData/Sprites/LoseWindow/Navigator_lose_image_1.png", LoadSprite3, AsyncLoadPriority.RES_HIGHT);
+        // m_MainPanel.m_audioSource.clip = AssetManager.Instance.LoadAsset<AudioClip>("Assets/GameData/Sounds/senlin.mp3");
         // m_MainPanel.m_audioSource.Play();
-        //go = AssetManager.Instance.LoadGameObject("Attack.prefab", "attack");
+        //go = AssetManager.Instance.LoadGameObject("Assets/GameData/Prefab/Attack.prefab");
     }
     public void LoadSprite1(Object sprite, object par)
     {
@@ -64,22 +61,19 @@ public class MenuUi : Window
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
-            uint crc = Crc32.GetCRC32("Attack.prefab" + "attack");
-            AssetManager.Instance.ClearHalfOfGameObjectPool(crc);
+            AssetManager.Instance.ClearHalfOfGameObjectPool("Assets/GameData/Prefab/Attack.prefab");
             //AssetItemManager.Instance.ClearCache();
             m_MainPanel.m_audioSource.clip = null;
         }
         if (Input.GetKeyDown(KeyCode.G))
         {
-            uint crc = Crc32.GetCRC32("Attack.prefab" + "attack");
-            AssetManager.Instance.RemoveGameObjectPool(crc);
+            AssetManager.Instance.RemoveGameObjectPool("Assets/GameData/Prefab/Attack.prefab");
             //AssetItemManager.Instance.ClearCache();
             m_MainPanel.m_audioSource.clip = null;
         }
         if (Input.GetKeyDown(KeyCode.H))
         {
-            uint crc = Crc32.GetCRC32("Attack.prefab" + "attack");
-            AssetManager.Instance.RemoveGameObjectPool(crc, true);
+            AssetManager.Instance.RemoveGameObjectPool("Assets/GameData/Prefab/Attack.prefab", true);
             //AssetItemManager.Instance.ClearCache();
             m_MainPanel.m_audioSource.clip = null;
         }

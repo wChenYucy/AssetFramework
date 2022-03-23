@@ -113,14 +113,14 @@ public class BinarySerializeOpt
     /// <typeparam name="T"></typeparam>
     /// <param name="path"></param>
     /// <returns></returns>
-    public static T BinaryDeserialize<T>(string assetName,string assetBundleName) where T : class
+    public static T BinaryDeserialize<T>(string path) where T : class
     {
         T t = default(T);
-        TextAsset textAsset = AssetManager.Instance.LoadAsset<TextAsset>(assetName, assetBundleName);
+        TextAsset textAsset = AssetManager.Instance.LoadAsset<TextAsset>(path);
 
         if (textAsset == null)
         {
-            Debug.LogError("cant load TextAsset: " + assetName);
+            Debug.LogError("cant load TextAsset: " + path);
             return null;
         }
 
@@ -135,7 +135,7 @@ public class BinarySerializeOpt
         }
         catch (Exception e)
         {
-            Debug.LogError("load TextAsset exception: " + assetName + "," + e);
+            Debug.LogError("load TextAsset exception: " + path + "," + e);
         }
         return t;
     }

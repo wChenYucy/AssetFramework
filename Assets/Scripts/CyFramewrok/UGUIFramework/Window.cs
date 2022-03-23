@@ -48,12 +48,12 @@ public class Window
     /// <param name="image"></param>
     /// <param name="setNativeSize"></param>
     /// <returns></returns>
-    public bool ChangeImageSprite(string assetName,string assetBundleName, Image image,bool setNativeSize = false)
+    public bool ChangeImageSprite(string path, Image image,bool setNativeSize = false)
     {
         if (image == null)
             return false;
 
-        Sprite sp = AssetManager.Instance.LoadAsset<Sprite>(assetName, assetBundleName);
+        Sprite sp = AssetManager.Instance.LoadAsset<Sprite>(path);
         if (sp != null)
         {
             if (image.sprite != null)
@@ -76,12 +76,12 @@ public class Window
     /// <param name="path"></param>
     /// <param name="image"></param>
     /// <param name="setNativeSize"></param>
-    public void ChangImageSpriteAsync(string assetName,string assetBundleName, Image image, bool setNativeSize = false)
+    public void ChangImageSpriteAsync(string path, Image image, bool setNativeSize = false)
     {
         if (image == null)
             return;
 
-        AssetManager.Instance.AsyncLoadAsset<Sprite>(assetName, assetBundleName,OnLoadSpriteFinish,AsyncLoadPriority.RES_HIGHT, image);
+        AssetManager.Instance.AsyncLoadAsset<Sprite>(path,OnLoadSpriteFinish,AsyncLoadPriority.RES_HIGHT, image);
     }
 
     /// <summary>

@@ -1,0 +1,27 @@
+ManifestFileVersion: 0
+CRC: 1068946654
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ee00404cd97469d18300da6b41fa43c4
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f267fd2d8bcb1179236b6179ac5313bc
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/GameData/Sprites/LoseWindow/Btn_replay.png
+- Assets/GameData/Sprites/LoseWindow/Navigator_lose_image_1.png
+- Assets/GameData/Sprites/LoseWindow/Navigator_lose_image.png
+- Assets/GameData/Sprites/LoseWindow/Navigator_lose_text.png
+- Assets/GameData/Sprites/LoseWindow/Navigator_prompt_pressed_zh.png
+- Assets/GameData/Sprites/LoseWindow/Btn_replay_pressed.png
+- Assets/GameData/Sprites/LoseWindow/Navigator_lose_image_2.png
+- Assets/GameData/Sprites/LoseWindow/Navigator_prompt_zh.png
+- Assets/GameData/Sprites/LoseWindow/Navigator_lose_image_3.png
+Dependencies: []

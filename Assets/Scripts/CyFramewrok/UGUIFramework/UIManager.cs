@@ -21,7 +21,7 @@ public class UIManager : Singleton<UIManager>
     //屏幕的宽高比
     private float m_CanvasRate = 0;
 
-    private string m_UIPrefabPath = "Assets/GameData/Prefabs/UGUI/Panel/";
+    private string m_UIPrefabPath = "Assets/GameData/Prefab/";
     //注册的字典
     private Dictionary<string, System.Type> m_RegisterDic = new Dictionary<string, System.Type>();
     //所有打开的窗口
@@ -160,7 +160,7 @@ public class UIManager : Singleton<UIManager>
                 return null;
             }
 
-            GameObject wndObj = AssetManager.Instance.LoadGameObject(wndName, wndName.Split(".")[0].ToLower());
+            GameObject wndObj = AssetManager.Instance.LoadGameObject(m_UIPrefabPath + wndName, m_WndRoot, false);
             if (wndObj == null)
             {
                 Debug.Log("创建窗口Prefab失败：" + wndName);
@@ -177,7 +177,6 @@ public class UIManager : Singleton<UIManager>
             wnd.Transform = wndObj.transform;
             wnd.Name = wndName;
             wnd.Awake(paralist);
-            wndObj.transform.SetParent(m_WndRoot, false);
 
             if (bTop)
             {

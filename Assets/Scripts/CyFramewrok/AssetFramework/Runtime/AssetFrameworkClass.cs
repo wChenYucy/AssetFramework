@@ -29,8 +29,7 @@ public class AssetBundleItem : IReusable
 public class AssetItem
 {
     #region 基础描述信息
-
-    public string AssetPath;
+    
     public string AssetName;
     public string AssetBundleName;
     public uint Crc;
@@ -108,6 +107,10 @@ public enum AsyncLoadPriority
 /// </summary>
 public class AsyncAssetLoadBlock : IReusable
 {
+#if UNITY_EDITOR
+    //资源路径
+    public string Path;
+#endif
     //待加载资源的ResourceItem的Crc
     public uint Crc;
 
@@ -123,6 +126,10 @@ public class AsyncAssetLoadBlock : IReusable
     public List<AsyncAssetCallBack> AsyncCallBackList = new List<AsyncAssetCallBack>();
     public void OnSpawn()
     {
+#if UNITY_EDITOR
+        //资源路径
+        Path = "";
+#endif
         Crc = 0;
         AssetType = null;
         Priority = AsyncLoadPriority.RES_SLOW;

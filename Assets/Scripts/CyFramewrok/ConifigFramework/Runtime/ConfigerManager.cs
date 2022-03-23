@@ -15,27 +15,26 @@ public class ConfigerManager : Singleton<ConfigerManager>
     /// <typeparam name="T"></typeparam>
     /// <param name="path">二进制路径</param>
     /// <returns></returns>
-    public T LoadData<T>(string assetName,string assetBundleName) where T : ExcelBase
+    public T LoadData<T>(string path) where T : ExcelBase
     {
-        if (string.IsNullOrEmpty(assetName) || string.IsNullOrEmpty(assetBundleName))
+        if (string.IsNullOrEmpty(path))
         {
             return null;
         }
-
-        string key = assetName + assetBundleName;
-        if (m_AllExcelData.ContainsKey(key))
+        
+        if (m_AllExcelData.ContainsKey(path))
         {
-            Debug.LogError("重复加载相同配置文件" + key);
-            return m_AllExcelData[key] as T;
+            Debug.LogError("重复加载相同配置文件" + path);
+            return m_AllExcelData[path] as T;
         }
 
-        T data = BinarySerializeOpt.BinaryDeserialize<T>(assetName, assetBundleName);
+        T data = BinarySerializeOpt.BinaryDeserialize<T>(path);
 
 #if UNITY_EDITOR
         if (data == null)
         {
-            Debug.Log(key + "不存在，从xml加载数据了！");
-            string xmlPath = key.Replace("Binary", "Xml").Replace(".bytes", ".xml");
+            Debug.Log(path + "不存在，从xml加载数据了！");
+            string xmlPath = path.Replace("Binary", "Xml").Replace(".bytes", ".xml");
             data = BinarySerializeOpt.XmlDeserialize<T>(xmlPath);
         }
 #endif
@@ -45,7 +44,7 @@ public class ConfigerManager : Singleton<ConfigerManager>
             data.Init();
         }
 
-        m_AllExcelData.Add(key, data);
+        m_AllExcelData.Add(path, data);
 
         return data;
     }
@@ -56,21 +55,20 @@ public class ConfigerManager : Singleton<ConfigerManager>
     /// <typeparam name="T"></typeparam>
     /// <param name="path"></param>
     /// <returns></returns>
-    public T FindData<T>(string assetName,string assetBundleName) where T:ExcelBase
+    public T FindData<T>(string path) where T:ExcelBase
     {
-        if (string.IsNullOrEmpty(assetName) || string.IsNullOrEmpty(assetBundleName))
+        if (string.IsNullOrEmpty(path))
         {
             return null;
         }
         ExcelBase excelBase = null;
-        string key = assetName + assetBundleName;
-        if (m_AllExcelData.TryGetValue(key, out excelBase))
+        if (m_AllExcelData.TryGetValue(path, out excelBase))
         {
             return excelBase as T;
         }
         else
         {
-            excelBase = LoadData<T>(assetName, assetBundleName);
+            excelBase = LoadData<T>(path);
         }
 
         return (T)excelBase;
