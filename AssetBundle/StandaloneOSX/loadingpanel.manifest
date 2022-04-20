@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 769434899
+CRC: 846369320
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 4ab4db9a3dbfe5d65e86a383629eb82e
+    Hash: 4fb542033b89596df546a0e1c1c0eae7
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 7d9b0fb99a7eeda49da96f9a9da51bd7
+    Hash: e71c63733d28f735a89f2973ab738871
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -35,7 +35,23 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 224
   Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers: []
+SerializeReferenceClassIdentifiers:
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.AnimationTriggers
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.ColorBlock
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.FontData
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Navigation
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Slider/SliderEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.SpriteState
 Assets:
 - Assets/GameData/Prefab/LoadingPanel.prefab
 Dependencies: []

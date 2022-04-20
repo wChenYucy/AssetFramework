@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 924160359
+CRC: 2684500095
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 82d5d512898e2c3f6361ec0f1b5927a4
+    Hash: 8af618e73f2770db023a38bcbdbc48c7
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 129044ac872b84ce97221a496d3773a4
+    Hash: d5c5331fbb621017bd5eab05c529a7e3
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -23,7 +23,11 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 224
   Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers: []
+SerializeReferenceClassIdentifiers:
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
 Assets:
 - Assets/GameData/Sprites/CommonUI/Navigator_tv.png
 - Assets/GameData/Prefab/Image1.prefab

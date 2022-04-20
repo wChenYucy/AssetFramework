@@ -12,7 +12,7 @@ public class GameStart : MonoBehaviour
         AssetManagerConfig config = new AssetManagerConfig();
         config.startCoroutineMono = this;
         AssetManager.Instance.Init(config);
-
+        HotPatchManager.Instance.Init(this);
     }
 
     public void Start()

@@ -1,7 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using UnityEditor;
 using UnityEngine;
 
@@ -18,15 +18,46 @@ public class BuildAppUtils
     public static void BuildApp()
     {
         // 构建AssetBundle
-        AssetBundleEditorUtils.BuildAssetBundle();
+        BuildAssetBundleUtils.NormalBuildAssetBundle();
+        
+        SaveVersion(PlayerSettings.bundleVersion, PlayerSettings.applicationIdentifier);
         
         //复制AssetBundle
-        CopyAssetBundle(AssetBundleEditorUtils.AssetBundleBuildPath);
+        CopyAssetBundle(BuildAssetBundleUtils.AssetBundleBuildPath);
         //生成可执行程序
+        Debug.Log(GetBuildPath());
         BuildPipeline.BuildPlayer(GetBuildScene(),GetBuildPath(),EditorUserBuildSettings.activeBuildTarget,BuildOptions.None);
         
         //移除AssetBundle
-        DeleteAssetBundle();
+        DeleteFilesInDir(Application.streamingAssetsPath);
+    }
+
+    private static void SaveVersion(string version,string package)
+    {
+        string content = "Version|" + version + ";PackageName|" + package + ";";
+        string savePath = Application.dataPath + "/Resources/Version.txt";
+        string all;
+        string firstLine;
+        
+        using (FileStream fs = new FileStream(savePath,FileMode.OpenOrCreate,FileAccess.ReadWrite,FileShare.ReadWrite))
+        {
+            using (StreamReader sr = new StreamReader(fs,System.Text.Encoding.UTF8))
+            {
+                all = sr.ReadToEnd();
+                firstLine = all.Split("\r")[0];
+            }
+        }
+        using (FileStream fs = new FileStream(savePath,FileMode.OpenOrCreate,FileAccess.ReadWrite,FileShare.ReadWrite))
+        {
+            using (StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.UTF8))
+            {
+                if (string.IsNullOrEmpty(all))
+                    all = content;
+                else
+                    all = all.Replace(firstLine, content);
+                sw.Write(all);
+            }
+        }
     }
 
     private static void CopyAssetBundle(string srcPath)
@@ -120,11 +151,11 @@ public class BuildAppUtils
         }
     }
     
-    private static void DeleteAssetBundle()
+    public static void DeleteFilesInDir(string path)
     {
         try
         {
-            DirectoryInfo dir = new DirectoryInfo(Application.streamingAssetsPath);
+            DirectoryInfo dir = new DirectoryInfo(path);
             FileSystemInfo[] fileInfo = dir.GetFileSystemInfos();
             foreach (FileSystemInfo info in fileInfo)
             {
@@ -144,4 +175,251 @@ public class BuildAppUtils
             Debug.LogError(e);
         }
     }
+
+    #region PC平台构建
+
+    [MenuItem("GameUtils/BuildPCApp")]
+    public static void PCBuild()
+    {
+        DeleteFilesInDir(MacosPath);
+        
+        PCSetting pcSetting = GetPCSetting();
+        
+        string suffix= SetPCSetting(pcSetting);
+        
+        // 构建AssetBundle
+        BuildAssetBundleUtils.NormalBuildAssetBundle();
+        
+        //复制AssetBundle
+        CopyAssetBundle(BuildAssetBundleUtils.AssetBundleBuildPath);
+        
+        CheckAndCreateDirectory(MacosPath);
+        string name = String.Format($"{appName}{suffix}_{DateTime.Now:yyyy_MM_dd_HH_mm}");
+        string buildPath = String.Format($"{MacosPath}{name}.app");
+    
+        BuildPipeline.BuildPlayer(GetBuildScene(),buildPath,EditorUserBuildSettings.activeBuildTarget,BuildOptions.None);
+        WriteBuildName(name);
+        //移除AssetBundle
+        DeleteFilesInDir(Application.streamingAssetsPath);
+    }
+
+    private static void WriteBuildName(string name)
+    {
+        FileInfo fileInfo = new FileInfo(Application.dataPath + "/../BuildName.txt");
+        using StreamWriter sw = fileInfo.CreateText();
+        sw.WriteLine(name);
+    }
+
+    private static PCSetting GetPCSetting()
+    {
+        PCSetting pcSetting = new PCSetting();
+        string[] settings = Environment.GetCommandLineArgs();
+        int count = settings.Length;
+        string str;
+        for (int i = 0; i < count; i++)
+        {
+            str = settings[i];
+            if (str.StartsWith("Version"))
+            {
+                var temp= str.Split('=', StringSplitOptions.RemoveEmptyEntries);
+                if (temp.Length == 2)
+                {
+                    pcSetting.Version = temp[1].Trim();
+                }
+            }
+            else if (str.StartsWith("Name"))
+            {
+                var temp= str.Split('=', StringSplitOptions.RemoveEmptyEntries);
+                if (temp.Length == 2)
+                {
+                    pcSetting.Name = temp[1].Trim();
+                }
+            }
+            else if(str.StartsWith("Debug"))
+            {
+                var temp= str.Split('=', StringSplitOptions.RemoveEmptyEntries);
+                if (temp.Length == 2)
+                {
+                    Boolean.TryParse(temp[1],out pcSetting.IsDebug);
+                }
+            }
+        }
+        return pcSetting;
+    }
+
+    private static string SetPCSetting(PCSetting pcSetting)
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.Append("_");
+        if (!string.IsNullOrEmpty(pcSetting.Version))
+        {
+            PlayerSettings.bundleVersion = pcSetting.Version;
+            sb.Append(pcSetting.Version);
+        }
+        if (!string.IsNullOrEmpty(pcSetting.Name))
+        {
+            PlayerSettings.productName = pcSetting.Name;
+        }
+        if (!pcSetting.IsDebug)
+        {
+            EditorUserBuildSettings.development = true;
+            EditorUserBuildSettings.connectProfiler = true;
+            sb.Append("_").Append(pcSetting.IsDebug);
+        }
+
+        return sb.ToString();
+    }
+
+    private class PCSetting
+    {
+        public string Version = "";
+        public string Name = "";
+        public bool IsDebug = false;
+    }
+
+    #endregion
+
+    #region Android平台构建
+
+    [MenuItem("GameUtils/BuildAndroidApp")]
+    public static void AndroidBuild()
+    {
+        DeleteFilesInDir(AndroidPath);
+        
+        //接收并设置参数
+        string suffix;
+        AndroidSetting androidSetting = GetAndroidSetting();
+        suffix = SetAndroidSetting(androidSetting);
+        
+        //设置Android秘钥
+        
+        PlayerSettings.Android.keystoreName = "user.keystore";
+        PlayerSettings.Android.keystorePass = "123456";
+        PlayerSettings.Android.keyaliasName = "chenyu";
+        PlayerSettings.Android.keyaliasPass = "123456";
+        
+        
+        // 构建AssetBundle
+        BuildAssetBundleUtils.NormalBuildAssetBundle();
+        
+        //复制AssetBundle
+        CopyAssetBundle(BuildAssetBundleUtils.AssetBundleBuildPath);
+        
+        CheckAndCreateDirectory(AndroidPath);
+        string name = String.Format($"{appName}{suffix}_{DateTime.Now:yyyy_MM_dd_HH_mm}");
+        string buildPath = String.Format($"{AndroidPath}{name}.apk");
+    
+        BuildPipeline.BuildPlayer(GetBuildScene(),buildPath,EditorUserBuildSettings.activeBuildTarget,BuildOptions.None);
+        WriteBuildName(name);
+        //移除AssetBundle
+        DeleteFilesInDir(Application.streamingAssetsPath);
+    }
+
+    private static AndroidSetting GetAndroidSetting()
+    {
+        AndroidSetting androidSetting  = new AndroidSetting();
+        string[] settings = Environment.GetCommandLineArgs();
+        int count = settings.Length;
+        string str;
+        for (int i = 0; i < count; i++)
+        {
+            str = settings[i];
+            if (str.StartsWith("Platform"))
+            {
+                var temp= str.Split('=', StringSplitOptions.RemoveEmptyEntries);
+                if (temp.Length == 2)
+                {
+                    androidSetting.platform = Enum.Parse<AndroidSetting.Platform>(temp[1], true);
+                }
+            }
+            if (str.StartsWith("Version"))
+            {
+                var temp= str.Split('=', StringSplitOptions.RemoveEmptyEntries);
+                if (temp.Length == 2)
+                {
+                    androidSetting.Version = temp[1].Trim();
+                }
+            }
+            else if (str.StartsWith("Name"))
+            {
+                var temp= str.Split('=', StringSplitOptions.RemoveEmptyEntries);
+                if (temp.Length == 2)
+                {
+                    androidSetting.Name = temp[1].Trim();
+                }
+            }
+            else if (str.StartsWith("MutilRendering"))
+            {
+                var temp= str.Split('=', StringSplitOptions.RemoveEmptyEntries);
+                if (temp.Length == 2)
+                {
+                    Boolean.TryParse(temp[1],out androidSetting.MutilRendering);
+                }
+            }
+            else if(str.StartsWith("Debug"))
+            {
+                var temp= str.Split('=', StringSplitOptions.RemoveEmptyEntries);
+                if (temp.Length == 2)
+                {
+                    Boolean.TryParse(temp[1],out androidSetting.IsDebug);
+                }
+            }
+        }
+        return androidSetting;
+    }
+
+    private static string SetAndroidSetting(AndroidSetting androidSetting)
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.Append("_");
+        if (androidSetting.platform != AndroidSetting.Platform.Default)
+        {
+            string symbol = PlayerSettings.GetScriptingDefineSymbolsForGroup(BuildTargetGroup.Android);
+            PlayerSettings.SetScriptingDefineSymbolsForGroup(BuildTargetGroup.Android,symbol+";"+androidSetting.platform.ToString());
+            sb.Append(androidSetting.platform.ToString());
+        }
+        if (!string.IsNullOrEmpty(androidSetting.Version))
+        {
+            PlayerSettings.bundleVersion = androidSetting.Version;
+            sb.Append("_").Append(androidSetting.Version);
+        }
+        if (!string.IsNullOrEmpty(androidSetting.Name))
+        {
+            PlayerSettings.productName = androidSetting.Name;
+        }
+        if (!androidSetting.MutilRendering)
+        {
+            PlayerSettings.MTRendering = androidSetting.MutilRendering;
+            sb.Append("_MT:").Append(androidSetting.MutilRendering);
+        }
+        if (!androidSetting.IsDebug)
+        {
+            EditorUserBuildSettings.development = true;
+            EditorUserBuildSettings.connectProfiler = true;
+            sb.Append("_DB:").Append(androidSetting.IsDebug);
+        }
+
+        return sb.ToString();
+    }
+    
+    private class AndroidSetting
+    {
+        public enum Platform
+        {
+            Default,
+            Xiaomi,
+            Huawei,
+            Oppo,
+            Vivo
+        }
+
+        public Platform platform;
+        public string Version = "";
+        public string Name = "";
+        public bool MutilRendering = true;
+        public bool IsDebug = false;
+    }
+
+    #endregion
+    
 }

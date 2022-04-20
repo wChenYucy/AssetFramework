@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1120636815
+CRC: 3848057391
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7d254dc564be4837087f4ec2a9f7c42e
+    Hash: b81a91299566a475cd892bb302a60ba0
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 6fe348aaa5f59fed02baf991d264e330
+    Hash: a6eef7e202e1b08b3e408625413aad6b
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -37,7 +37,23 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 224
   Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers: []
+SerializeReferenceClassIdentifiers:
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.AnimationTriggers
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Button/ButtonClickedEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.ColorBlock
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.FontData
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Navigation
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.SpriteState
 Assets:
 - Assets/GameData/Prefab/MenuPanel.prefab
 Dependencies: []

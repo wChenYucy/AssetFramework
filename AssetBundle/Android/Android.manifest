@@ -1,7 +1,30 @@
 ManifestFileVersion: 0
-CRC: 2714318028
+CRC: 3856653303
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: assetbundleconfig
+      Name: sound
+      Dependencies: {}
+    Info_1:
+      Name: shader
+      Dependencies: {}
+    Info_2:
+      Name: losewindowui
+      Dependencies: {}
+    Info_3:
+      Name: attack
+      Dependencies:
+        Dependency_0: shader
+    Info_4:
+      Name: image1
+      Dependencies: {}
+    Info_5:
+      Name: image2
+      Dependencies:
+        Dependency_0: image1
+    Info_6:
+      Name: loadingpanel
+      Dependencies: {}
+    Info_7:
+      Name: menupanel
       Dependencies: {}

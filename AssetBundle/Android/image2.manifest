@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 4212345334
+CRC: 906915143
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 297cb46c5270acbcf6aa1bb645a4e41b
+    Hash: ce01cdd9a7a894ccfb8898dd82b9a128
   TypeTreeHash:
     serializedVersion: 2
     Hash: 7e709fe5f7b675169b925dd84be8594a
@@ -29,4 +29,4 @@ SerializeReferenceClassIdentifiers:
 Assets:
 - Assets/GameData/Prefab/Image2.prefab
 Dependencies:
-- E:/Unity/Asset/AssetFramework/Assets/../AssetBundle/Android/image1
+- /Users/chenyu/Codes/Unity/Assets/AssetFramework/Assets/../AssetBundle/Android/image1

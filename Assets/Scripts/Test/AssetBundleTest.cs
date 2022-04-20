@@ -19,7 +19,7 @@ public class AssetBundleTest : MonoBehaviour
         AssetBundleConfig assetBundleConfig = (AssetBundleConfig)binaryFormatter.Deserialize(memoryStream);
         memoryStream.Close();
         string path = "Assets/GameData/Prefab/Attack.prefab";
-        uint crc = Crc32.GetCRC32(path);
+        uint crc = GUIDUtils.GetCRC32(path);
         ItemConfig itemConfig = null;
         for (int i = 0; i < assetBundleConfig.ItemList.Count; i++)
         {

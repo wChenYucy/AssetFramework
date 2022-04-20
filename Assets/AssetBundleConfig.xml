@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <AssetBundleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ItemList AssetPath="Assets/GameData/Prefab/Attack.prefab" AssetName="Attack.prefab" AssetBundleName="attack" AssetCrc="357436155">
+    <DependAssetBundle>attack</DependAssetBundle>
     <DependAssetBundle>shader</DependAssetBundle>
   </ItemList>
-  <ItemList AssetPath="Assets/GameData/Prefab/Image1.prefab" AssetName="Image1.prefab" AssetBundleName="image1" AssetCrc="3800570560" />
+  <ItemList AssetPath="Assets/GameData/Prefab/Image1.prefab" AssetName="Image1.prefab" AssetBundleName="image1" AssetCrc="3800570560">
+    <DependAssetBundle>image1</DependAssetBundle>
+  </ItemList>
   <ItemList AssetPath="Assets/GameData/Prefab/Image2.prefab" AssetName="Image2.prefab" AssetBundleName="image2" AssetCrc="241860510">
     <DependAssetBundle>image1</DependAssetBundle>
   </ItemList>
