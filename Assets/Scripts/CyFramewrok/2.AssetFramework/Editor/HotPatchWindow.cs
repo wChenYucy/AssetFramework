@@ -21,7 +21,7 @@ public class HotPatchWindow : EditorWindow
         md5Path = EditorGUILayout.TextField("MD5配置文件路径：", md5Path);
         if (GUILayout.Button("选择配置文件",GUILayout.Width(150),GUILayout.Height(20)))
         {
-            md5Path = "/Users/chenyu/Codes/Unity/Assets/AssetFramework/Version/Android/ABInfoConfig_0.1.bytes";
+            md5Path = "/Users/chenyu/Codes/Unity/Assets/AssetFramework/Version/StandaloneOSX/ABInfoConfig_0.1.bytes";
         }
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.BeginHorizontal();

@@ -144,7 +144,7 @@ public class UIManager : Singleton<UIManager>
     /// <param name="para2"></param>
     /// <param name="para3"></param>
     /// <returns></returns>
-    public Window PopUpWnd(string wndName, bool bTop = true, params object[] paralist)
+    public Window PopUpWnd(string wndName, bool bTop = true, bool resource = false, params object[] paralist)
     {
         Window wnd = FindWndByName<Window>(wndName);
         if (wnd == null)
@@ -160,7 +160,15 @@ public class UIManager : Singleton<UIManager>
                 return null;
             }
 
-            GameObject wndObj = AssetManager.Instance.LoadGameObject(m_UIPrefabPath + wndName, m_WndRoot, false);
+            GameObject wndObj = null;
+            if (resource)
+            {
+                wndObj = GameObject.Instantiate(Resources.Load<GameObject>(wndName.Replace(".prefab", "")));
+            }
+            else
+            {
+                wndObj = AssetManager.Instance.LoadGameObject(m_UIPrefabPath + wndName, m_WndRoot, false);
+            }
             if (wndObj == null)
             {
                 Debug.Log("创建窗口Prefab失败：" + wndName);
@@ -177,7 +185,9 @@ public class UIManager : Singleton<UIManager>
             wnd.Transform = wndObj.transform;
             wnd.Name = wndName;
             wnd.Awake(paralist);
-
+            wnd.Resource = resource;
+            
+            wndObj.transform.SetParent(m_WndRoot, false);
             if (bTop)
             {
                 wndObj.transform.SetAsLastSibling();
@@ -221,14 +231,22 @@ public class UIManager : Singleton<UIManager>
                 m_WindowList.Remove(window);
             }
 
-            if (destory)
+            if (window.Resource)
             {
-                AssetManager.Instance.ReleaseAsset(window.GameObject, true);
+                GameObject.Destroy(window.GameObject);
             }
             else
             {
-                AssetManager.Instance.ReleaseAsset(window.GameObject);
+                if (destory)
+                {
+                    AssetManager.Instance.ReleaseAsset(window.GameObject, true);
+                }
+                else
+                {
+                    AssetManager.Instance.ReleaseAsset(window.GameObject);
+                }
             }
+            
             window.GameObject = null;
             window = null;
         }
@@ -251,7 +269,7 @@ public class UIManager : Singleton<UIManager>
     public void SwitchStateByName(string name,bool bTop = true,params object[] paralist)
     {
         CloseAllWnd();
-        PopUpWnd(name, bTop, paralist);
+        PopUpWnd(name, bTop, false, paralist);
     }
 
     /// <summary>

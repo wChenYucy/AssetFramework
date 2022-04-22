@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patches xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1">
+  <Files Name="StandaloneOSX" Url="http://127.0.0.1:8080/AssetBundle0.1/1/StandaloneOSX" Platform="StandaloneOSX" Md5="03d016f17293ca5c75d9d120c08a1779" Size="1.7421875" />
+  <Files Name="attack" Url="http://127.0.0.1:8080/AssetBundle0.1/1/attack" Platform="StandaloneOSX" Md5="33b85f0692573a3b6c9ac3fbca88411b" Size="689.2012" />
+</Patches>

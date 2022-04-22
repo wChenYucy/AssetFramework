@@ -39,7 +39,7 @@ public class GameMapManager : Singleton<GameMapManager>
     {
         LoadingProgress = 0;
         m_Mono.StartCoroutine(LoadSceneAsync(name));
-        UIManager.Instance.PopUpWnd(ConStr.LOADINGPANEL, true, name);
+        UIManager.Instance.PopUpWnd(ConStr.LOADINGPANEL, true, false, name);
     }
 
     /// <summary>
@@ -90,6 +90,7 @@ public class GameMapManager : Singleton<GameMapManager>
             while (LoadingProgress < targetProgress - 2)
             {
                 ++LoadingProgress;
+                Debug.Log(LoadingProgress);
                 yield return new WaitForEndOfFrame();
             }
             LoadingProgress = 100;
@@ -97,7 +98,7 @@ public class GameMapManager : Singleton<GameMapManager>
             AlreadyLoadScene = true;
             if (LoadSceneOverCallBack != null)
             {
-                LoadSceneEnterCallBack();
+                LoadSceneOverCallBack();
             }
         }
     }

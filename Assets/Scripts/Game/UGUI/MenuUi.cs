@@ -19,7 +19,7 @@ public class MenuUi : Window
         AssetManager.Instance.AsyncLoadAsset<Sprite>("Assets/GameData/Sprites/LoseWindow/Navigator_lose_image_1.png", LoadSprite3, AsyncLoadPriority.RES_HIGHT);
         // m_MainPanel.m_audioSource.clip = AssetManager.Instance.LoadAsset<AudioClip>("Assets/GameData/Sounds/senlin.mp3");
         // m_MainPanel.m_audioSource.Play();
-        //go = AssetManager.Instance.LoadGameObject("Assets/GameData/Prefab/Attack.prefab");
+        go = AssetManager.Instance.LoadGameObject("Assets/GameData/Prefab/Attack.prefab");
     }
     public void LoadSprite1(Object sprite, object par)
     {

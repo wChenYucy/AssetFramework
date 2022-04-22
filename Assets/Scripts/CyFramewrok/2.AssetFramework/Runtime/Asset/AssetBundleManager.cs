@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using OfficeOpenXml.FormulaParsing.Excel.Functions.Logical;
 using UnityEngine;
 
 public class AssetBundleManager : Singleton<AssetBundleManager>
@@ -57,8 +58,9 @@ public class AssetBundleManager : Singleton<AssetBundleManager>
         uint crc = GUIDUtils.GetCRC32(name);
         if (!assetBundleItemsDic.TryGetValue(crc, out AssetBundleItem item))
         {
-            string path = Application.streamingAssetsPath + "/" + name;
-            AssetBundle assetBundle = AssetBundle.LoadFromFile(path);
+            string path = HotPatchManager.Instance.ComputeABPath(name);
+            string assetBundlePath = !string.IsNullOrEmpty(path) ? path : Application.streamingAssetsPath + "/" + name;
+            AssetBundle assetBundle = AssetBundle.LoadFromFile(assetBundlePath);
             if (assetBundle == null)
             {
                 Debug.LogError($"LoadResourceItem Error:未在{path}处找到名称为{name}的AssetBundle");

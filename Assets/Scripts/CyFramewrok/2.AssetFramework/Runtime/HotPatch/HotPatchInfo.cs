@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using UnityEngine.Serialization;
 
 [System.Serializable]
 public class HotPatchInfo
@@ -14,8 +15,8 @@ public class VersionInfo
 {
     [XmlAttribute]
     public string Version;
-    [XmlElement]
-    public Patches[] Pathces;
+    [FormerlySerializedAs("Pathces")] [XmlElement]
+    public Patches[] Patches;
 }
 
 //一个总补丁包

@@ -7,7 +7,7 @@ public class Constant
 
     public static readonly string ServerHotPatchConfigPath = Application.persistentDataPath + "/ServerHotPatchInfo.xml";
     public static readonly string LocalHotPatchConfigPath = Application.persistentDataPath + "/LocalHotPatchInfo.xml";
-    public static readonly string AssetBundleDownloadPath = Application.persistentDataPath + "Download/";
+    public static readonly string AssetBundleDownloadPath = Application.persistentDataPath + "/Download/";
 
     #endregion
     

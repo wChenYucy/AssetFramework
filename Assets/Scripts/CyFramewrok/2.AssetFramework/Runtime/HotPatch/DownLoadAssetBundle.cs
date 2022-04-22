@@ -15,10 +15,13 @@ public class DownLoadAssetBundle : DownLoadItem
 
     public override IEnumerator Download(Action callback = null)
     {
+        Debug.Log(url);
         webRequest = UnityWebRequest.Get(url);
         startDownLoad = true;
         webRequest.timeout = 30;
         yield return webRequest.SendWebRequest();
+
+        yield return new WaitForSeconds(5);
         startDownLoad = false;
 
         if (webRequest.isNetworkError)

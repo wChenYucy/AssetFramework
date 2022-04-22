@@ -46,6 +46,7 @@ public class BuildAppUtils
                 all = sr.ReadToEnd();
                 firstLine = all.Split("\r")[0];
             }
+
         }
         using (FileStream fs = new FileStream(savePath,FileMode.OpenOrCreate,FileAccess.ReadWrite,FileShare.ReadWrite))
         {

@@ -12,7 +12,7 @@ public class HotPatchManager : Singleton<HotPatchManager>
     private MonoBehaviour mono;
     
     //当前构建版本
-    private string currentVersion;
+    public string currentVersion;
     //当前构建包名
     private string currentPackName;
     
@@ -20,7 +20,7 @@ public class HotPatchManager : Singleton<HotPatchManager>
     private HotPatchInfo hotPatchInfo;
     //服务器热更数据
     private VersionInfo currentVersionInfo;
-    private Patches currentPatches;
+    public Patches currentPatches;
     
     //所有属于热更的AssetBundle信息
     private Dictionary<string, Patch> hotPatches;
@@ -33,7 +33,7 @@ public class HotPatchManager : Singleton<HotPatchManager>
     private Dictionary<string, string> needDownloadAssetBundleMD5;
     
     //是否正在下载
-    private bool isDownloadStart;
+    public bool isDownloadStart;
     //已经下载完成的AssetBundle
     private List<Patch> alreadyDownloadAssetBundleList;
     //正在下载的AssetBundle
@@ -49,7 +49,7 @@ public class HotPatchManager : Singleton<HotPatchManager>
     
     //下载AssetBundle的总大小 单位kb
     public float DownloadTotalSize { get; set; }
-    
+
     //下载热更配置表失败回调
     public Action HotPatchInfoDownloadError;
     
@@ -111,11 +111,11 @@ public class HotPatchManager : Singleton<HotPatchManager>
     {
         #region 下载服务器最新配置表
 
-        string versionConfigUrl = "https://127.0.0.1/HotPatchInfo.xml";
+        string versionConfigUrl = "http://127.0.0.1:8080/HotPatchInfo.xml";
         UnityWebRequest unityWebRequest = UnityWebRequest.Get(versionConfigUrl);
         unityWebRequest.timeout = 30;
         yield return unityWebRequest.SendWebRequest();
-
+        
         if (unityWebRequest.result == UnityWebRequest.Result.ConnectionError)
         {
             Debug.Log("连接服务器超时，请检查本地网络配置！");
@@ -193,8 +193,8 @@ public class HotPatchManager : Singleton<HotPatchManager>
             }
         }
 
-        if (localVersionInfo != null && localVersionInfo.Pathces != null && currentPatches != null &&
-            local.GameVersion[^1].Pathces[^1].Version != currentPatches.Version) 
+        if (localVersionInfo != null && localVersionInfo.Patches != null && currentPatches != null &&
+            local.GameVersion[^1].Patches[^1].Version != currentPatches.Version) 
             return true;
 
         return false;
@@ -205,9 +205,9 @@ public class HotPatchManager : Singleton<HotPatchManager>
         needDownloadAssetBundles.Clear();
         needDownloadAssetBundleDic.Clear();
         needDownloadAssetBundleMD5.Clear();
-        if (currentVersionInfo != null && currentVersionInfo.Pathces != null && currentVersionInfo.Pathces.Length > 0)
+        if (currentVersionInfo != null && currentVersionInfo.Patches != null && currentVersionInfo.Patches.Length > 0)
         {
-            currentPatches = currentVersionInfo.Pathces[^1];
+            currentPatches = currentVersionInfo.Patches[^1];
             if (currentPatches != null && currentPatches.Files != null)
             {
                 foreach (var patch in currentPatches.Files)
@@ -255,6 +255,7 @@ public class HotPatchManager : Singleton<HotPatchManager>
         {
             needDownloadAssetBundles.Add(patch);
             needDownloadAssetBundleDic.Add(patch.Name, patch);
+            needDownloadAssetBundleMD5.Add(patch.Name, patch.Md5);
         }
     }
 
@@ -348,6 +349,22 @@ public class HotPatchManager : Singleton<HotPatchManager>
     {
         needDownloadAssetBundleDic.TryGetValue(name, out var patch);
         return patch;
+    }
+    
+    // <summary>
+    /// 计算AB包路径
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
+    public string ComputeABPath(string name)
+    {
+        Patch patch = null;
+        hotPatches.TryGetValue(name, out patch);
+        if (patch != null)
+        {
+            return Constant.AssetBundleDownloadPath + "/" + name;
+        }
+        return "";
     }
     
     /// <summary>

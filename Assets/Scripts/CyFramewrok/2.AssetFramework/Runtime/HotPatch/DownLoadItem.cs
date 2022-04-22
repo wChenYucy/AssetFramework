@@ -79,7 +79,7 @@ public abstract class DownLoadItem
 
     public DownLoadItem(string url, string path)
     {
-        url = url;
+        this.url = url;
         savePath = path;
         startDownLoad = false;
         fileNameWithoutExt = Path.GetFileNameWithoutExtension(url);

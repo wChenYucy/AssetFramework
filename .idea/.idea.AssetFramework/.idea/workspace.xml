@@ -3,160 +3,40 @@
   <component name="ChangeListManager">
     <list default="true" id="d31fc0f7-771e-48a7-9d47-cf7789279578" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AssetFramework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AssetFramework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/Android" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/Android" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/Android.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/Android.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/assetbundleconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/assetbundleconfig.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/attack" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/attack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/attack.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/attack.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/image1" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/image1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/image1.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/image1.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/image2" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/image2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/image2.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/image2.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/loadingpanel" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/loadingpanel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/loadingpanel.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/loadingpanel.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/losewindowui" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/losewindowui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/losewindowui.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/losewindowui.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/menupanel" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/menupanel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/menupanel.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/menupanel.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/shader" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/shader.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/shader.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/sound" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/sound" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/Android/sound.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/Android/sound.manifest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/StandaloneOSX" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/StandaloneOSX" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/StandaloneOSX.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/StandaloneOSX.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/assetbundleconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/assetbundleconfig.manifest" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/attack" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/attack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/attack.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/attack.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/image1" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/image1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/image1.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/image1.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/image2" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/image2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/image2.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/image2.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/loadingpanel" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/loadingpanel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/loadingpanel.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/loadingpanel.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/losewindowui" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/losewindowui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/losewindowui.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/losewindowui.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/menupanel" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/menupanel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/menupanel.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/menupanel.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/shader" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/shader.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/shader.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/sound" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/sound" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/sound.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/sound.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundleConfig.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundleConfig.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundleConfig.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundleConfig.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameData/Modle/benghuai/Avatar_Kiana_C2_Texture_Body_Color_RGB2048.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameData/Modle/benghuai/Avatar_Kiana_C2_Texture_Body_Color_RGB2048.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/AssetBundleInfoConfig.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AssetBundleInfoConfig.bytes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Version.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Version.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Editor/AssetBundleEditorConfig.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Editor/AssetBundleEditorConfig.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Editor/AssetBundleEditorUtils.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Editor/AssetBundleEditorUtils.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Editor/AssetFramework.Editor.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Editor/AssetFramework.Editor.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Runtime.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Runtime/AssetBundleConfig.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Runtime/AssetBundleConfig.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Runtime/AssetBundleManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Runtime/AssetBundleManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Runtime/AssetFramework.Runtime.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Runtime/AssetFramework.Runtime.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Runtime/AssetFrameworkClass.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Runtime/AssetFrameworkClass.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Runtime/AssetItemManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Runtime/AssetItemManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Runtime/AssetManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Runtime/AssetManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Runtime/AssetManagerConfig.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Runtime/AssetManagerConfig.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Runtime/Crc32.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/AssetFramework/Runtime/Crc32.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/BasicFramework.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/BasicFramework/BasicFramework.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/BasicFramework/BasicFramework.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/BasicFramework/Singleton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/BasicFramework/Singleton.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ConifigFramework.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ConifigFramework/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ConifigFramework/Editor/DataEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ConifigFramework/Editor/DataEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ConifigFramework/Plugins.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ConifigFramework/Plugins/EPPlus.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ConifigFramework/Plugins/EPPlus.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ConifigFramework/Runtime.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ConifigFramework/Runtime/BinarySerializeOpt.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ConifigFramework/Runtime/BinarySerializeOpt.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ConifigFramework/Runtime/ConfigerManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ConifigFramework/Runtime/ConfigerManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ConifigFramework/Runtime/ExcelBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ConifigFramework/Runtime/ExcelBase.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/Editor/RealFramConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/Editor/CyFrameworkConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/Editor/RealFramConfig.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/Editor/CyFrameworkConfig.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ObjectPoolFramework.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ObjectPoolFramework/ClassObjectPool.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ObjectPoolFramework/ClassObjectPool.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ObjectPoolFramework/IReusable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ObjectPoolFramework/IReusable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ObjectPoolFramework/ObjectPoolFramework.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ObjectPoolFramework/ObjectPoolFramework.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ObjectPoolFramework/ObjectPoolManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/ObjectPoolFramework/ObjectPoolManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/UGUIFramework.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/UGUIFramework/UGUIFramework.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/UGUIFramework/UGUIFramework.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/UGUIFramework/UIManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/UGUIFramework/UIManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/UGUIFramework/Window.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/UGUIFramework/Window.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Editor/BuildAssetBundleUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Editor/BuildAssetBundleUtils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Editor/HotPatchWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Editor/HotPatchWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/Asset/AssetBundleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/Asset/AssetBundleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/Common/Constant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/Common/Constant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/DownLoadAssetBundle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/DownLoadAssetBundle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/DownLoadItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/DownLoadItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/HotPatchInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/HotPatchInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/HotPatchManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/HotPatchManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/4.UGUIFramework/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/4.UGUIFramework/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/4.UGUIFramework/Window.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/4.UGUIFramework/Window.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameStart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Manager/GameMapManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Manager/GameMapManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Msic/ConStr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Msic/ConStr.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/UGUI/MenuUi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/UGUI/MenuUi.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Utils/Editor/BuildAppUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Utils/Editor/BuildAppUtils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test/AssetBundleTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Test/AssetBundleTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Android" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Android.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Android.manifest.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Android.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/assetbundleconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/assetbundleconfig.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/assetbundleconfig.manifest.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/assetbundleconfig.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/attack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/attack.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/attack.manifest.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/attack.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/image1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/image1.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/image1.manifest.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/image1.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/image2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/image2.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/image2.manifest.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/image2.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/loadingpanel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/loadingpanel.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/loadingpanel.manifest.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/loadingpanel.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/losewindowui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/losewindowui.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/losewindowui.manifest.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/losewindowui.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/menupanel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/menupanel.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/menupanel.manifest.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/menupanel.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/shader.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/shader.manifest.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/sound" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/sound.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/sound.manifest.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/sound.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test/UGUIFrameworkTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Test/UGUIFrameworkTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Version/StandaloneOSX/ABInfoConfig_0.1.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Version/StandaloneOSX/ABInfoConfig_0.1.bytes" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,15 +59,22 @@
     <setting file="file://$USER_HOME$/Downloads/RealFram/Assets/RealFram/FramePlug/ResourceFrame/DownLoad/DownLoadItem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Downloads/RealFram/Assets/RealFram/FramePlug/ResourceFrame/DownLoad/HotPatchManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/DownLoadAssetBundle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d53566eafcb6418abacd98aab60de3b6157400/8b/b3d1f83d/RuntimePlatform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CyFramewrok/0.BasicFramework/Utils/GUIDUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d53566eafcb6418abacd98aab60de3b6157400/b5/8b96a283/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Downloads/RealFram/Assets/RealFram/FramePlug/ResourceFrame/DownLoad/DownLoadAssetBundle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d53566eafcb6418abacd98aab60de3b6157400/fa/a7362cd8/YieldInstruction.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CyFramewrok/1.ObjectPoolFramework/ClassObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6dc81564161e48fa88db6c39a1028c51810c00/4b/af818bd1/BuildTarget.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Downloads/RealFram/Assets/RealFram/FramePlug/ResourceFrame/DownLoad/ServerInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6dc81564161e48fa88db6c39a1028c51810c00/5f/1c749e60/PlayModeView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/HotPatchManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9bfe2e977db742c5a53d13f14515301dbe00/37/18ded88d/UnityWebRequest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9bfe2e977db742c5a53d13f14515301dbe00/80/7a7de9fb/UnityWebRequestAsyncOperation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/DownLoadItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/UGUI/CommonConfirm.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -217,10 +104,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="951">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="951" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -243,6 +130,10 @@
       <workItem from="1650373736808" duration="740000" />
       <workItem from="1650414836187" duration="15331000" />
       <workItem from="1650442075363" duration="3306000" />
+      <workItem from="1650505234075" duration="538000" />
+      <workItem from="1650507788384" duration="2224000" />
+      <workItem from="1650544871399" duration="4789000" />
+      <workItem from="1650587204474" duration="8153000" />
     </task>
     <servers />
   </component>
@@ -281,7 +172,25 @@
           <properties documentPath="E:\Unity\Asset\AssetFramework\Assets\Scripts\CyFramewrok\AssetFramework\Runtime\AssetItemManager.cs" initialLine="336" containingFunctionPresentation="method 'AsyncLoadCoroutine'" />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/HotPatchManager.cs</url>
+          <line>163</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/HotPatchManager.cs" initialLine="163" containingFunctionPresentation="method 'CheckHotPatch'">
+            <startOffsets>
+              <option value="4646" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4674" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
+        <watch expression="LoadingProgress" language="C#" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

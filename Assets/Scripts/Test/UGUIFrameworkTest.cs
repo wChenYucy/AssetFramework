@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 
 public class UGUIFrameworkTest : MonoBehaviour
 {
+    public int test = 10;
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,6 +35,5 @@ public class UGUIFrameworkTest : MonoBehaviour
     private void Update()
     {
         UIManager.Instance.OnUpdate();
-        
     }
 }

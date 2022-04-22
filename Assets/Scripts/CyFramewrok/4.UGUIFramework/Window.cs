@@ -11,6 +11,8 @@ public class Window
     //引用Transform
     public Transform Transform { get; set; }
 
+    public bool Resource { get; set; }
+    
     //名字
     public string Name { get; set; }
 

@@ -87,16 +87,16 @@ public class BuildAssetBundleUtils
 
         #region 生成AssetBundle配置表代码
 
-        // SetAssetBundleName("assetbundleconfig", "Assets/AssetBundleConfig.bytes");
-        // BuildPipeline.BuildAssetBundles(AssetBundleBuildPath, BuildAssetBundleOptions.ChunkBasedCompression,
-        //     EditorUserBuildSettings.activeBuildTarget);
-        // ClearAssetBundleName();
-        //
-        // if (File.Exists(BINARYOUTPUTPATH))
-        // {
-        //     File.Delete(BINARYOUTPUTPATH);
-        //     File.Delete(BINARYOUTPUTPATH + ".meta");
-        // }
+        SetAssetBundleName("assetbundleconfig", "Assets/AssetBundleConfig.bytes");
+        BuildPipeline.BuildAssetBundles(AssetBundleBuildPath, BuildAssetBundleOptions.ChunkBasedCompression,
+            EditorUserBuildSettings.activeBuildTarget);
+        ClearAssetBundleName();
+        
+        if (File.Exists(BINARYOUTPUTPATH))
+        {
+            File.Delete(BINARYOUTPUTPATH);
+            File.Delete(BINARYOUTPUTPATH + ".meta");
+        }
 
         #endregion
         
@@ -450,14 +450,14 @@ public class BuildAssetBundleUtils
         Patches patches = new Patches();
         patches.Version = Int32.Parse(hotfixCount);
         patches.Files = new List<Patch>();
-        for (int i = 0; i < files.Length; i++)
+        for (int i = 0; i < files.Length; i++) 
         {
             Patch patch = new Patch();
             patch.Name = files[i].Name;
             patch.Md5 = GUIDUtils.BuildFileMd5(files[i].FullName);
             patch.Size = files[i].Length / 1024.0f;
             patch.Platform = EditorUserBuildSettings.activeBuildTarget.ToString();
-            patch.Url = "/usr/local/var/www/AssetBundle" + PlayerSettings.bundleVersion + "/" + hotfixCount + "/" + files[i].Name;
+            patch.Url = "http://127.0.0.1:8080/AssetBundle/" + PlayerSettings.bundleVersion + "/" + hotfixCount + "/" + files[i].Name;
             patches.Files.Add(patch);
         }
 
