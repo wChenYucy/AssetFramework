@@ -3,40 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d31fc0f7-771e-48a7-9d47-cf7789279578" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AssetFramework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AssetFramework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/StandaloneOSX" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/StandaloneOSX" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/StandaloneOSX.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/StandaloneOSX.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/attack" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/attack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/attack.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundle/StandaloneOSX/attack.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundleConfig.bytes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundleConfig.bytes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameData/Modle/benghuai/Avatar_Kiana_C2_Texture_Body_Color_RGB2048.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameData/Modle/benghuai/Avatar_Kiana_C2_Texture_Body_Color_RGB2048.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/AssetBundleInfoConfig.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AssetBundleInfoConfig.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Version.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Version.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Editor/BuildAssetBundleUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Editor/BuildAssetBundleUtils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Editor/HotPatchWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Editor/HotPatchWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/Asset/AssetBundleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/Asset/AssetBundleManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/Common/Constant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/Common/Constant.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/DownLoadAssetBundle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/DownLoadAssetBundle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/DownLoadItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/DownLoadItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/HotPatchInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/HotPatchInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/HotPatchManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/HotPatchManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/4.UGUIFramework/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/4.UGUIFramework/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/4.UGUIFramework/Window.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CyFramewrok/4.UGUIFramework/Window.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameStart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Manager/GameMapManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Manager/GameMapManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Msic/ConStr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Msic/ConStr.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/UGUI/MenuUi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/UGUI/MenuUi.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Utils/Editor/BuildAppUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Utils/Editor/BuildAppUtils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test/UGUIFrameworkTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Test/UGUIFrameworkTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test/AssetBundleTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Test/AssetBundleTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Version/StandaloneOSX/ABInfoConfig_0.1.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Version/StandaloneOSX/ABInfoConfig_0.1.bytes" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,8 +43,8 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/HotPatchManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9bfe2e977db742c5a53d13f14515301dbe00/37/18ded88d/UnityWebRequest.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9bfe2e977db742c5a53d13f14515301dbe00/80/7a7de9fb/UnityWebRequestAsyncOperation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9793914fcd324316adf292d7aca0dbc4131e00/0b/59ea9e7a/UnityAction`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CyFramewrok/2.AssetFramework/Runtime/HotPatch/DownLoadItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/UGUI/CommonConfirm.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -104,10 +76,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="951">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="951" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -134,6 +106,8 @@
       <workItem from="1650507788384" duration="2224000" />
       <workItem from="1650544871399" duration="4789000" />
       <workItem from="1650587204474" duration="8153000" />
+      <workItem from="1650849380181" duration="716000" />
+      <workItem from="1651240084274" duration="41000" />
     </task>
     <servers />
   </component>

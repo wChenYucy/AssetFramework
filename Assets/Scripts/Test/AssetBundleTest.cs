@@ -5,6 +5,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.Events;
 
 public class AssetBundleTest : MonoBehaviour
 {
